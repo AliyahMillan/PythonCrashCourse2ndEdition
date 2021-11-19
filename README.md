@@ -1,6 +1,5 @@
-# Python Crash Course 2nd Edition Solutions, 
-## By Aliyah Alexis Millán
-223P Lab/Homework solutions.
+# Python Crash Course 2nd Edition Solutions
+223P Lab/Homework solutions (By Aliyah Alexis Millán)
 
 This page will be updated frequently to include new solutions.
 The solutions will be, of course, in Python.
