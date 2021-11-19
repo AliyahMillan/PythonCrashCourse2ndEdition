@@ -26,7 +26,6 @@ CPSC-223P Section 1/Section 2
 name = "My name is Aliyah!"
 print(name)
 ```
-
 --------------------
 ## 2_2.py:
 Simple Messages: Assign a message to a variable, and print that message. Then change the value of the variable to a new message, and print the new message.
@@ -43,7 +42,6 @@ print(book)
 book = "I'll take the lot!"
 print(book)
 ```
-
 --------------------
 ## 2_3.py:
 Personal Message: Use a variable to represent a person’s name, and print a message to that person. 
@@ -79,6 +77,7 @@ print(name.upper())
 name = "Aliyah Millan!"
 print(name.title())
 ```
+--------------------
 ## 2_5.py:
 Famous Quote: Find a quote from a famous person you admire. Print the quote and the name of its author. Your output should look something like the following, including the quotation marks:
 
@@ -96,7 +95,7 @@ filler = "once said in his song 'If I Killed Someone For You':"
 quote = '\n"You have to understand that\nThe one I killed is me"'
 print(name.title(), filler, quote)
 ```
-
+--------------------
 
 
 
