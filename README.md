@@ -206,3 +206,33 @@ print("The circumference of a circle with radius",r,"is", circ)
 --------------------
 # Chapter 3
 ## 3_1.py: 
+Names: Store the names of a few of your friends in a list called names. Print each person’s name by accessing each element in the list, one at a time.
+```python
+"""
+Aliyah Alexis Millán
+CPSC-223P Section 1/Section 2
+1 September 2021
+"""
+names = ['Dylan1', 'Dylan2', 'Destiny']
+print(names[0])
+print(names[1])
+print(names[2])
+```
+--------------------
+## 3_4.py:
+Guest List: If you could invite anyone, living or deceased, to dinner, who would you invite? Make a list that includes at least three people you’d like to invite to dinner. Then use your list to print a message to each person, inviting them to dinner.
+```python
+"""
+Aliyah Alexis Millán
+CPSC-223P Section 1/Section 2
+1 September 2021
+"""
+
+dinnerInvites = ['Alec Benjamin', 'Rian', 'Brendon Urie']
+message = "You're invited to my exclusive dinner party,"
+
+print(message, dinnerInvites[0],"!")
+print(message, dinnerInvites[1],"!")
+print(message, dinnerInvites[2],"!")
+```
+--------------------
