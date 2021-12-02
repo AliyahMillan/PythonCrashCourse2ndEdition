@@ -1065,11 +1065,250 @@ for city, city_info in cities.items():
     print("  It has a population of about " + str(population) + ".")
     print(" One fact about it: " + str(fact))
  ```
- # Chapter 7: 
+ # Chapter 7: User Input and While Loops
+## 7_1.py:
+Rental Car: Write a program that asks the user what kind of rental car they would like. Print a message about that car, such as “Let me see if I can find you a Subaru.”
+```python
+"""
+Aliyah Alexis Millán
+CPSC-223P Section 1/Section 2
+22 September 2021
+"""
+
+carType = input("What kind of car would you like?\n")
+print("Let me see if I can find you a " + carType.title() + "!")
+```
+## 7_3.py:
+Multiples of Ten: Ask the user for a number, and then report whether the number is a multiple of 10 or not.
+```python
+"""
+Aliyah Alexis Millán
+CPSC-223P Section 1/Section 2
+24 September 2021
+"""
+
+number = input("Please give me a number: ")
+number = int(number)
+
+if number % 10 == 0:
+  print(str(number) + " is a multiple of 10.")
+else:
+  print(str(number) + " isn't a multiple of 10.")
+```
+## 7_4.py:
+Pizza Toppings: Write a loop that prompts the user to enter a series of pizza toppings until they enter a 'quit' value. As they enter each topping, print a message saying you’ll add that topping to their pizza.
+ - Use a conditional test in the while statement to stop the loop.
+ - Use an active variable to control how long the loop runs.
+When complete, print a formatted message that lists the pizza toppings.
+Look at the parrot_flag.py program for an example of an active variable.
+```python
+"""
+Aliyah Alexis Millán
+CPSC-223P Section 1/Section 2
+23 September 2021
+"""
+prompt = "\nWhat topping would you like on your pizza?"
+#+= (operator?) adds another value with the variable's value and assigns the new value to the variable, according to Stack Overflow:
+prompt += "\nEnter the word 'done' when you're finished: \n"
+
+while True:
+  toppings = input(prompt)
+ # != is 'not equal'
+  if toppings != 'done': #my conditional statement
+    print("I'll add " + toppings + " to your pizza.")
+  else:
+    break #ends the while loop
+```
+## 7_5.py:
+Movie Tickets: A movie theater charges different ticket prices depending on a person’s age. If a person is under the age of 3, the ticket is free; if they are between 3 and 12, the ticket is $10; and if they are over age 12, the ticket is $15. Write a loop in which you ask users their age, and then tell them the cost of their movie ticket.
+```python
+"""
+Aliyah Alexis Millán
+CPSC-223P Section 1/Section 2
+23 September 2021
+"""
+prompt = "--> How old are you?"
+prompt += "\n--> Enter 'done' when you're finished. \n"
+while True:
+  age = input(prompt)
+  if age == 'done':
+    break
+  age = int(age)
+######################
+  if age < 3:
+    print("--> You get in free!")
+  elif age < 13:
+    print("--> Your ticket costs $10.")
+  else:
+    print("--> Your ticket costs $15.")
+```
+## 7_8.py:
+Deli: Make a list called sandwich_orders and fill it with the names of various sandwiches. Then make an empty list called finished_sandwiches. Loop through the list of sandwich orders and print a message for each order, such as I made your tuna sandwich. As each sandwich is made, move it to the list of finished sandwiches. After all the sandwiches have been made, print a message listing each sandwich that was made.
+```python
+"""
+Aliyah Alexis Millán
+CPSC-223P Section 1/Section 2
+24 September 2021
+"""
+sandwich_order = ['nutella', 'ham and cheese', 'turkey on rye', 'tuna']
+
+completed_sandwich = []
+
+while sandwich_order:
+  current_sandwich = sandwich_order.pop()
+  print("I'm working on your " + current_sandwich + " sandwich.")
+  completed_sandwich.append(current_sandwich)
+
+print("\n")
+for sandwich in completed_sandwich:
+  print("I made your " + sandwich + " sandwich.")
+```
+## 7_9.py:
+No Pastrami: Using the list sandwich_orders from 7-8, make sure the sandwich 'pastrami' appears in the list at least three times. Add code near the beginning of your program to print a message saying the deli has run out of pastrami, and then use a while loop to remove all occurrences of 'pastrami' from sandwich_orders. Make sure no pastrami sandwiches end up in finished_sandwiches.
+```python
+"""
+Aliyah Alexis Millán
+CPSC-223P Section 1/Section 2
+24 September 2021
+"""
+sandwich_order = [
+    'pastrami', 'ham and cheese', 'Rian-style turkey on rye', 'pastrami',
+    'cold ice cream', 'pastrami', 'cheesy, cheesy with cheese']
+finished_sandwiches = []
+
+print("I'm sorry, we're all out of pastrami today.")
+while 'pastrami' in sandwich_order:
+    sandwich_order.remove('pastrami')
+
+print("\n")
+while sandwich_order:
+    current_sandwich = sandwich_order.pop()
+    print("I'm working on your " + current_sandwich + " sandwich.")
+    finished_sandwiches.append(current_sandwich)
+
+print("\n")
+for sandwich in finished_sandwiches:
+    print("I made you a " + sandwich + " sandwich!")
+```
+## 7_10.py:
+Dream Vacation: Write a program that polls users about their dream vacation. Write a prompt that first asks for the person's name, then asks what country their first dream vacation would be in and then asks what country their second dream vacation would be in. Store the result in a dictionary with the name as the key and the value is a list of destinations. Include a block of code that prints the results of the poll.  See mountain_poll.py
+```python
+"""
+Aliyah Alexis Millán
+CPSC-223P Section 1/Section 2
+25 September 2021
+
+For 7-10 there should be two dream destinations.  One way to add that is to get both destinations, create a small list and then add the list to the dictionary using the key that is the name (of the person).
+    """
+
+ask_name = "What's your name? "
+ask_place = "If you could visit one place in the world, where would it be? "
+ask_continue = "\nWould you like to let someone else leave a response? (yes/no) "
+# Keep my responses in the form {name: place}.
+responses = {}
+while True:
+    name = input(ask_name)
+    place = input(ask_place)
+
+    # Store response.
+    responses[name] = place
+
+    repeat = input(ask_continue)
+    if repeat != ('yes'):
+        break
+
+print("\n----- Results -----\n")
+for name, place in responses.items():
+    print(name.title() + " would like to visit " + place.title() + ".")
+```
+## 7_11.py:
+Print Squares and Cubes of X:  Starting with the following code, complete the print statement using .format() such that it produces the attached output:
+```python
+# Provided Code
+print(" x   x**2 x**3")
+for x in range(1, 11):
+    print(<your code here>)
+```
+```python
+# Provided output
+
+Output:
+
+ x   x**2 x**3
+ 1   1    1
+ 2   4    8
+ 3   9   27
+ 4  16   64
+ 5  25  125
+ 6  36  216
+ 7  49  343
+ 8  64  512
+ 9  81  729
+10 100 1000
+```
+📣 📣
+
+```python
+CODE NEEDED
+```
+## 7_12.py:
+
+```python
+"""
+Aliyah Alexis Millán
+CPSC-223P Section 1/Section 2
+27 September 2021
+
+Printing Number: Create a list containing the following numbers: 123.45, -5.12345, 0.056789.  Print these numbers in this formatted output using an f-string.
+
+Number: 123.45
+
+Number: -5.123
+
+Number: 0.05679
+"""
+
+numList = [round(123.45, 1), round(-5.12345, 3), round(0.056789, 5)]
+print(f"Number: {numList[0]}\n\nNumber: {numList[1]}\n\nNumber: {numList[2]}")
+```
+## 7_13.py:
+
+```python
+""""
+Aliyah Alexis Millán
+CPSC-223P Section 1/Section 2
+30 September 2021
+
+
+More Print Numbers: Using the list from 7-12, numbers in this formatted output using an str.format():
+
+ 
+
+Formatted number list:
+
+_______123.45_______
+
+______-5.12345______
+
+______0.056789______
 
 
 
+txt1 = "My name is {fname}, I'm {age}".format(fname = "John", age = 36)
+txt2 = "My name is {0}, I'm {1}".format("John",36)
+txt3 = "My name is {}, I'm {}".format("John",36)
 
+"""
+numList = [round(123.45, 1), round(-5.12345, 3), round(0.056789, 5)]
+print(f"Number: {numList[0]}\n\nNumber: {numList[1]}\n\nNumber: {numList[2]}")
+```
+## 7_14.py:
+
+📣 📣
+
+```python
+CODE NEEDED
+```
 
 
 
