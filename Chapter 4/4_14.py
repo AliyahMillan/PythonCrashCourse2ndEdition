@@ -31,4 +31,4 @@ print("Untrusted users list: ", untrusted_users)
 all_users = {'Rian', 'Josiah', 'Aaron', 'Mathias', 'Aliyah'}
 untrusted_users = {'Yao', 'Rian'}
 trusted_users =  all_users - untrusted_users
-print("All users: ", all_users,"\nTrusted Users: ",trusted_users)
+print("All users: ", all_users,"\nTrusted Users: ", trusted_users)
