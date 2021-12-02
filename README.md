@@ -11,8 +11,7 @@ The solutions will be, of course, in Python.
 
 
 
-# Chapter 2 
-
+# Chapter 2: Variables and Simple Data Types
 ## 2_1.py:
 Simple Message: Assign a message to a variable, and then print that message.
 ```python
@@ -193,7 +192,7 @@ print ("The area of a circle with radius",r,"is",area)
 circ = round(2*pi*r)
 print("The circumference of a circle with radius",r,"is", circ)
 ```
-# Chapter 3
+# Chapter 3: Lists
 ## 3_1.py: 
 Names: Store the names of a few of your friends in a list called names. Print each person’s name by accessing each element in the list, one at a time.
 ```python
@@ -462,7 +461,7 @@ print(phrase[1:5])
 print(phrase[0:13])
 print(phrase[0:8] + word)
 ```
-# Chapter 4
+# Chapter 4: More Lists
 ## 4_1.py:
 Pizzas: Think of at least three kinds of your favorite pizza. Store these pizza names in a list, and then use a for loop to print the name of each pizza.
 
@@ -826,19 +825,94 @@ print(combined)
 ## 6_1.py:
 Person: Use a dictionary to store information about a person you know. Store their first name, last name, age, and the city in which they live. You should have keys such as first_name, last_name, age, and city. Print each piece of information stored in your dictionary.
 ```python
+"""
+Aliyah Alexis Millán
+CPSC-223P Section 1/Section 2
+16 September 2021
+"""
 
+person = {
+  'first_name': 'Roberto',
+  'last_name': 'Suarez',
+  'age': 43,
+  'city': 'orange',
+}
+
+print(person['first_name'])
+print(person['last_name'])
+print(person['age'])
+print(person['city'])
 ```
 ## 6_2.py:
 Favorite Numbers: Use a dictionary to store people’s favorite numbers. Think of five names, and use them as keys in your dictionary. Think of a favorite number for each person, and store each as a value in your dictionary. Print each person’s name and their favorite number. 
 ```python
+"""
+Aliyah Alexis Millán
+CPSC-223P Section 1/Section 2
+16 September 2021
+"""
 
+favorite_numbers = {
+  'Aliyah': 0,
+  'Twon': 10,
+  'Gary': 9,
+  'Henry': 8,
+  'Christina': 2,
+}
+
+num = favorite_numbers['Aliyah']
+print("Aliyah's favorite number is " , str(num) , ".")
+
+num = favorite_numbers['Twon']
+print("Twon's favorite number is " , str(num) , ".")
+
+num = favorite_numbers['Gary']
+print("Gary's favorite number is " , str(num) , ".")
+
+num = favorite_numbers['Henry']
+print("Henry's favorite number is " , str(num) , ".")
+
+num = favorite_numbers['Christina']
+print("Christina's favorite number is " , str(num) , ".")
 ```
 ## 6_3.py:
 Glossary: A Python dictionary can be used to model an actual dictionary. However, to avoid confusion, let’s call it a glossary.
  - Think of five programming words you’ve learned about in the previous chapters. Use these words as the keys in your glossary, and store their meanings as values.
  - Print each word and its meaning as neatly formatted output. You might print the word followed by a colon and then its meaning, or print the word on one line and then print its meaning indented on a second line. Use the newline character (\n) to insert a blank line between each word-meaning pair in your output.  Use \ to include long definitions.  Use a key, value loop to print the glossary
 ```python
+"""
+Aliyah Alexis Millán
+CPSC-223P Section 1/Section 2
+16 September 2021
 
+Glossary: A Python dictionary can be used to model an actual dictionary. However, to avoid confusion, let’s call it a glossary.
+
+Think of five programming words you’ve learned about in the previous chapters. Use these words as the keys in your glossary, and store their meanings as values.
+Print each word and its meaning as neatly formatted output. You might print the word followed by a colon and then its meaning, or print the word on one line and then print its meaning indented on a second line. Use the newline character (\n) to insert a blank line between each word-meaning pair in your output.  Use \ to include long definitions.  Use a key, value loop to print the glossary.
+"""
+
+glossary = {
+  'string': 'A series of characters.',
+  'comment': 'A note in a program that the Python interpreter ignores.',
+  'list': 'A collection of items in a particular order.',
+  'loop': 'Work through a collection of items, one at a time.',
+  'dictionary': "A collection of key-value pairs.",
+}
+
+word = 'string'
+print("\n", word.title(), ": ", glossary[word])
+
+word = 'comment'
+print("\n", word.title(), ": ", glossary[word])
+
+word = 'list'
+print("\n", word.title(), ": ", glossary[word])
+
+word = 'loop'
+print("\n", word.title(), ": ", glossary[word])
+
+word = 'dictionary'
+print("\n", word.title(),": ", glossary[word])
 ```
 ## 6_5.py:
 Rivers: Make a dictionary containing three major rivers and the country each river runs through. One key-value pair might be 'nile': 'egypt'.
@@ -846,7 +920,31 @@ Rivers: Make a dictionary containing three major rivers and the country each riv
  - Use a loop to print the name of each river included in the dictionary.
  - Use a loop to print the name of each country included in the dictionary.
 ```python
+"""
+Aliyah Alexis Millán
+CPSC-223P Section 1/Section 2
+16 September 2021
 
+"""
+
+rivers = {
+    'Nile': 'Egypt',
+    'Thames': 'England',
+    'Ness': 'Scotland',
+    'Blackwater': 'Ireland',
+    'Tama': 'Japan',
+    }
+
+for river, country in rivers.items():
+    print("The ", river.title(), " flows through ", country.title(), ".")
+
+print("\nThe following rivers are included in this data set:")
+for river in rivers.keys():
+    print("- ", river.title())
+
+print("\nThe following countries are included in this data set:")
+for country in rivers.values():
+    print("- ", country.title())
 ```
 ## 6_6.py:
 Polling: Use the code in favorite_languages.py.
@@ -854,22 +952,132 @@ Polling: Use the code in favorite_languages.py.
 Make a list of people who should take the favorite languages poll. Include some names that are already in the dictionary and some that are not.
 Loop through the list of people who should take the poll. If they have already taken the poll, print a message thanking them for responding. If they have not yet taken the poll, print a message inviting them to take the poll.
 ```python
+"""
+Aliyah Alexis Millán
+CPSC-223P Section 1/Section 2
+16 September 2021
 
+"""
+
+favourite_languages = {
+  'Henry': 'Python',
+  'James': 'C',
+  'Isabelle': 'Ruby',
+  'Jack': 'Python',
+}
+
+for name, language in favourite_languages.items():
+  print(name.title(), "'s favourite language is ", language.title(), ".")
+
+print("\n")
+
+coders = ['Ian', 'Caleb', 'Jose', 'Ken', 'Sally', 'Aaron', 'Wilhelmina']
+for coder in coders:
+  if coder in favourite_languages.keys():
+    print("Thank you for taking the poll, ", coder.title() , "!")
+  else:
+    print(coder.title(), ", what's your favourite programming language?")
 ```
 ## 6_7.py:
 People: Start with the program you wrote for 6-1. Make two new dictionaries representing different people, and store all three dictionaries in a list called people. Loop through your list of people. As you loop through the list, print everything you know about each person.  For example, "Neil Thompson is 66 years old and lives in the city of Orange."
 ```python
+"""
+Aliyah Alexis Millán
+CPSC-223P Section 1/Section 2
+16 September 2021
 
+"""
+people = []
+person = {
+  'first_name': 'Henry', 
+  'last_name': 'Grubstick', #Forgive me, I must...!
+  'age': 47,
+  'city': 'Fresno',
+}
+people.append(person)
+
+person = {
+  'first_name': 'Aliyah',
+  'last_name': 'Millán',
+  'age': 19,
+  'city': "'hey that's confidential information'", #kek
+}
+people.append(person)
+
+person = {
+  'first_name': 'Jessie',
+  'last_name': 'Switcher',
+  'age': 23,
+  'city': 'Las Vegas',
+}
+people.append(person)
+
+for person in people:
+  name = person['first_name'].title() + " " + person['last_name'].title()
+  age = str(person['age'])
+  city = person['city'].title()  
+  print(name + ", of " + city, ", is " + age + " years old.")
 ```
 ## 6_10.py:
 Favorite Numbers: Modify your program from 6-2 so each person can have more than one favorite number. For one person, give them three favorite number and for another give them two favorite numbers.  Then print each person’s name along with their favorite numbers.
 ```python
+"""
+Aliyah Alexis Millán
+CPSC-223P Section 1/Section 2
+16 September 2021
 
+Favorite Numbers: Modify your program from 6-2 so each person can have more than one favorite number. For one person, give them three favorite number and for another give them two favorite numbers.  Then print each person’s name along with their favorite numbers.
+
+"""
+
+favourite_numbers = {
+  'Henry': [42, 17],
+  'James': [42, 39, 56],
+  'Rob': [7, 12],
+}
+
+for name, numbers in favourite_numbers.items():
+  print("\n", name.title(), " likes the following numbers:")
+  for number in numbers:
+    print("  ", str(number))
 ```
 ## 6_11.py:
  Cities: Make a dictionary called cities. Use the names of three cities as keys in your dictionary. Create a dictionary of information about each city and include the country that the city is in, its approximate population, and one fact about that city. The keys for each city’s dictionary should be something like country, population, and fact. Print the name of each city and all of the information you have stored about it.
  ```python
- 
+ """
+Aliyah Alexis Millán
+CPSC-223P Section 1/Section 2
+16 September 2021
+
+Cities: Make a dictionary called cities. Use the names of three cities as keys in your dictionary. Create a dictionary of information about each city and include the country that the city is in, its approximate population, and one fact about that city. The keys for each city’s dictionary should be something like country, population, and fact. Print the name of each city and all of the information you have stored about it.
+
+"""
+cities = {
+ 'Mexico City': {
+   'country': 'Mexico',
+   'population': '8.855 million',
+   'fact': "Volcán Popocatépetl, whose name is the Aztec word for smoking mountain, towers to 5426 m 70 km SE of Mexico City to form North America's 2nd-highest volcano. \U0001F30B",
+},
+  'London': {
+    'country': 'England',
+    'population': '8.982 million',
+    'fact': 'Charles II is the one who ordered 6 ravens to be placed inside the Tower of London in order to protect it. Superstition has continued ever since. \U0001F3F0',
+}, #Should I have used the Cleopatra's Needle is a time capsule?
+  'Paris': {
+        'country': 'France',
+        'population': 1003285,
+        'fact': "Supposedly, there's only one stop sign in all of Paris. \U0001F6D1",
+        }
+    }
+
+for city, city_info in cities.items():
+    country = city_info['country'].title()
+    population = city_info['population']
+    fact = city_info['fact']
+    
+    print("\n" + "\U0001F30E" + city.title() + " is in " + country + ".")
+    print("  It has a population of about " + str(population) + ".")
+    print(" One fact about it: " + str(fact))
  ```
  # Chapter 7: 
 
