@@ -3,7 +3,7 @@ Aliyah Alexis Millán
 CPSC-223P Section 1/Section 2
 8 September 2021
 """
-#Done with help with Professor Graham
+#Done with help from Professor Graham
 MAX_PRIMES = 1000
 primes = list(x for x in range(2, MAX_PRIMES+1))
 for current_prime in primes:
@@ -14,4 +14,4 @@ for current_prime in primes:
       primes.remove(prime_multiple)
 
 print(primes)
-print("Length: ",len(primes))
+print("Length: ", len(primes))
