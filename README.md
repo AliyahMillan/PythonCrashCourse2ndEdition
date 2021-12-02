@@ -489,32 +489,84 @@ print("I'm actually not that crazy about pizza, I'm sorry.\nIt's ok, but I've ne
 ## 4_3.py:
 Counting to Twenty: Use a for loop to print the numbers from 1 to 20, inclusive.
 ```python
+"""
+Aliyah Alexis Millán
+CPSC-223P Section 1/Section 2
+7 September 2021
+"""
 
+num = list(range(1, 21))
+for number in num:
+  print(number)
 ```
 ## 4_4.py:
 One Million: Make a list of the numbers from one to one million, and then use a for loop to print the numbers. (If the output is taking too long, stop it by pressing CTRL-C or by closing the output window.)
 ```python
-
+"""
+Aliyah Alexis Millán
+CPSC-223P Section 1/Section 2
+7 September 2021
+"""
+#1M = 1,000,000
+num = list(range(1, 1_000_001))
+for number in num:
+  print(number)
 ```
 ## 4_5.py:
 Summing a Million: Make a list of the numbers from one to one million, and then use min() and max() to make sure your list actually starts at one and ends at one million. Also, use the sum() function to see how quickly Python can add a million numbers.
 ```python
+"""
+Aliyah Alexis Millán
+CPSC-223P Section 1/Section 2
+7 September 2021
+"""
+num = list(range(1, 1000001))
 
+print(min(num))
+print(max(num))
+print(sum(num))
 ```
 ## 4_6.py:
 Odd Numbers: Use the third argument of the range() function to make a list of the odd numbers from 1 to 20. Use a for loop to print each number.
 ```python
-
+"""
+Aliyah Alexis Millán
+CPSC-223P Section 1/Section 2
+7 September 2021
+"""
+#Formula to follow: range([start], end, [step])
+#where step is how many number jumps you are making
+for i in range(1, 20, 2):
+  print(i)
 ```
 ## 4_8.py:
 Cubes: A number raised to the third power is called a cube. For example, the cube of 2 is written as 2**3 in Python. Make a list of the first 10 cubes (that is, the cube of each integer from 1 through 10), and use a for loop to print out the value of each cube.
 ```python
+"""
+Aliyah Alexis Millán
+CPSC-223P Section 1/Section 2
+7 September 2021
+"""
 
+cube_list = []
+for num in range(1, 11):
+  cube = num**3
+  cube_list.append(cube)
+
+for cube in cube_list:
+  print(cube)
 ```
 ## 4_9.py:
 Cube Comprehension: Use a list comprehension to generate a list of the first 10 cubes.
 ```python
-
+"""
+Aliyah Alexis Millán
+CPSC-223P Section 1/Section 2
+8 September 2021
+"""
+cube_list = [num ** 3 for num in range(1,11)] #Allows me to create a single-lined for loop for my list as I make the list itself.
+for cube in cube_list:
+  print(cube)
 ```
 ## 4_10.py:
 Slices: Starting with program 4-9, add several lines to the end of the program that do the following:
@@ -522,7 +574,18 @@ Slices: Starting with program 4-9, add several lines to the end of the program t
  - Print the message Three items from the middle of the list are:. Use a slice to print three items from the middle of the list.
  - Print the message The last three items in the list are:. Use a slice to print the last three items in the list.
 ```python
-
+"""
+Aliyah Alexis Millán
+CPSC-223P Section 1/Section 2
+8 September 2021
+"""
+cube_list = [num ** 3 for num in range(1,11)] #Allows me to create a single-lined for loop for my list as I make the list itself.
+for cube in cube_list:
+  print(cube)
+#Starting 4_10.py:
+print("The first three items in the list are: ", cube_list[:3])
+print("Three items from the middle of the list are: ", cube_list[3:6])
+print("The last three items in the list are: ", cube_list[7:10])
 ```
 ## 4_11.py:
 My Pizzas, Your Pizzas: Start with your program from Exercise 4-1. Make a copy of the list of pizzas, and call it friend_pizzas. Then, do the following:
@@ -530,7 +593,25 @@ My Pizzas, Your Pizzas: Start with your program from Exercise 4-1. Make a copy o
  - Add a different pizza type to the list friend_pizzas.
  - Prove that you have two separate lists. Print the message My favorite pizzas are:, and then use a for loop to print the first list. Print the message My friend’s favorite pizzas are:, and then use a for loop to print the second list. Make sure each new pizza is stored in the appropriate list.
 ```python
+"""
+Aliyah Alexis Millán
+CPSC-223P Section 1/Section 2
+8 September 2021
+"""
 
+pizza_list = ['Cheese', 'Pepperoni', 'BBQ Chicken', 'Stuffed crust']
+for i in range(len(pizza_list)):
+  print ("I like", pizza_list[i],".")
+print("\nI'm actually not that crazy about pizza, I'm sorry.\nIt's ok, but I've never really craved it.\nMy favourite kind would be cheese though. Golden, not brown.\n")
+
+friend_pizzas = ['Cheese', 'Pepperoni', 'BBQ Chicken', 'Hawaiian']
+
+print("My favourite pizzas are: ")
+for i in range(len(pizza_list)):
+  print(pizza_list[i])
+print("\nMy friend's favourite pizzas are: ")
+for i in range(len(friend_pizzas)):
+  print(friend_pizzas[i])
 ```
 ## 4_13.py:
 Buffet: A buffet-style restaurant offers only five basic foods. Think of five simple foods, and store them in a tuple.
@@ -538,7 +619,29 @@ Buffet: A buffet-style restaurant offers only five basic foods. Think of five si
  - Try to modify one of the items, and make sure that Python rejects the change.
  - The restaurant changes its menu, replacing two of the items with different foods. Add a line that rewrites the tuple, and then use a for loop to print each of the items on the revised menu.
 ```python
+"""
+Aliyah Alexis Millán
+CPSC-223P Section 1/Section 2
+8 September 2021
+"""
+menuItems = (
+  'Mac n cheese', 'Chicken nuggets', 'Cheeseburgers',
+  'Lasagne', 'Fish n chips',
+)
 
+print("Here's your menu!:")
+for item in menuItems:
+ print("- ", item)
+
+menuItems = (
+  'Mac n cheese', 'Chicken nuggets', 'Cheeseburgers',
+  'Spaghetti', 'Haggis', 
+)
+
+print("\nWe updated our menu!")
+print("Here's the new menu:")
+for item in menuItems:
+  print("- ", item)
 ```
 ## 4_14.py:
 _Trusted Users:_
@@ -555,14 +658,71 @@ _Sets_
  - Using subtraction, create a set called trusted users which contains all_users but none in untrusted_users.
  
 ```python
+"""
+Aliyah Alexis Millán
+CPSC-223P Section 1/Section 2
+8 September 2021
+"""
+"""
+Create a list called all_users and initialize it with three users.  Print it.
+Add a user to this list using append
+Create a list called untrusted_users with two users, one in all_users and one that is not.  Print it.
+Using the two previously created lists, create a list called trusted_users 
+using a list comprehension
+using a for loop
 
+Sets
+Create a set called all_user with 5 user names.
+Create a set called untrusted_users containing 2 users, one in all_users and one not in all_users.
+Using subtraction, create a set called trusted users which contains all_users but none in untrusted_users.
+
+"""
+#Lists:
+all_users = ['User1', 'User2', 'User3']
+print("Original list: ", all_users)
+
+all_users.append('User4')
+print("After append: ", all_users)
+
+untrusted_users = ['User1', 'UserUntrust']
+print("Untrusted users list: ", untrusted_users)
+
+#sets:
+all_users = {'Rian', 'Josiah', 'Aaron', 'Mathias', 'Aliyah'}
+untrusted_users = {'Yao', 'Rian'}
+trusted_users =  all_users - untrusted_users
+print("All users: ", all_users,"\nTrusted Users: ", trusted_users)
 ```
 ## 4_15.py:
+Sieve of Eratosthenens: Using only a python list, for, in, if, range and remove, write a program that will determine prime numbers between 2 and 1000.  
 
+ - List the integers beginning with 2.
+ - Circle 2 (it must be a prime).
+     - Cross out all its multiples.  They cannot be primes.
+ - Circle the next integer that is not yet crossed out
+     - Cross out its multiples.
+ - Repeat.
 ```python
+"""
+Aliyah Alexis Millán
+CPSC-223P Section 1/Section 2
+8 September 2021
+"""
+#Done with help with Professor Graham
+MAX_PRIMES = 1000
+primes = list(x for x in range(2, MAX_PRIMES+1))
+for current_prime in primes:
+  for prime_multiple in range(current_prime*2, MAX_PRIMES*2, current_prime):
 
+    #print(prime_multiple)
+    if prime_multiple in primes:
+      primes.remove(prime_multiple)
+
+print(primes)
+print("Length: ",len(primes))
 ```
-
+# Chapter 5
+## 
 
 
 
