@@ -878,17 +878,12 @@ print("Christina's favorite number is " , str(num) , ".")
 ## 6_3.py:
 Glossary: A Python dictionary can be used to model an actual dictionary. However, to avoid confusion, let’s call it a glossary.
  - Think of five programming words you’ve learned about in the previous chapters. Use these words as the keys in your glossary, and store their meanings as values.
- - Print each word and its meaning as neatly formatted output. You might print the word followed by a colon and then its meaning, or print the word on one line and then print its meaning indented on a second line. Use the newline character (\n) to insert a blank line between each word-meaning pair in your output.  Use \ to include long definitions.  Use a key, value loop to print the glossary
+ - Print each word and its meaning as neatly formatted output. You might print the word followed by a colon and then its meaning, or print the word on one line and then print its meaning indented on a second line. Use the newline character (\n) to insert a blank line between each word-meaning pair in your output.  Use \ to include long definitions.  Use a key, value loop to print the glossary.
 ```python
 """
 Aliyah Alexis Millán
 CPSC-223P Section 1/Section 2
 16 September 2021
-
-Glossary: A Python dictionary can be used to model an actual dictionary. However, to avoid confusion, let’s call it a glossary.
-
-Think of five programming words you’ve learned about in the previous chapters. Use these words as the keys in your glossary, and store their meanings as values.
-Print each word and its meaning as neatly formatted output. You might print the word followed by a colon and then its meaning, or print the word on one line and then print its meaning indented on a second line. Use the newline character (\n) to insert a blank line between each word-meaning pair in your output.  Use \ to include long definitions.  Use a key, value loop to print the glossary.
 """
 
 glossary = {
@@ -924,7 +919,6 @@ Rivers: Make a dictionary containing three major rivers and the country each riv
 Aliyah Alexis Millán
 CPSC-223P Section 1/Section 2
 16 September 2021
-
 """
 
 rivers = {
@@ -956,7 +950,6 @@ Loop through the list of people who should take the poll. If they have already t
 Aliyah Alexis Millán
 CPSC-223P Section 1/Section 2
 16 September 2021
-
 """
 
 favourite_languages = {
@@ -985,7 +978,6 @@ People: Start with the program you wrote for 6-1. Make two new dictionaries repr
 Aliyah Alexis Millán
 CPSC-223P Section 1/Section 2
 16 September 2021
-
 """
 people = []
 person = {
@@ -1025,9 +1017,6 @@ Favorite Numbers: Modify your program from 6-2 so each person can have more than
 Aliyah Alexis Millán
 CPSC-223P Section 1/Section 2
 16 September 2021
-
-Favorite Numbers: Modify your program from 6-2 so each person can have more than one favorite number. For one person, give them three favorite number and for another give them two favorite numbers.  Then print each person’s name along with their favorite numbers.
-
 """
 
 favourite_numbers = {
@@ -1048,9 +1037,6 @@ for name, numbers in favourite_numbers.items():
 Aliyah Alexis Millán
 CPSC-223P Section 1/Section 2
 16 September 2021
-
-Cities: Make a dictionary called cities. Use the names of three cities as keys in your dictionary. Create a dictionary of information about each city and include the country that the city is in, its approximate population, and one fact about that city. The keys for each city’s dictionary should be something like country, population, and fact. Print the name of each city and all of the information you have stored about it.
-
 """
 cities = {
  'Mexico City': {
