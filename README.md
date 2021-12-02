@@ -708,7 +708,7 @@ Aliyah Alexis Millán
 CPSC-223P Section 1/Section 2
 8 September 2021
 """
-#Done with help with Professor Graham
+#Done with help from Professor Graham
 MAX_PRIMES = 1000
 primes = list(x for x in range(2, MAX_PRIMES+1))
 for current_prime in primes:
@@ -719,10 +719,164 @@ for current_prime in primes:
       primes.remove(prime_multiple)
 
 print(primes)
-print("Length: ",len(primes))
+print("Length: ", len(primes))
 ```
-# Chapter 5
-## 
+# Chapter 5: If
+## 5_8.py:
+Hello Admin: Make a list of five or more usernames, including the name 'admin'. Imagine you are writing code that will print a greeting to each user after they log in to a website. Loop through the list, and print a greeting to each user:
+ - If the username is 'admin', print a special greeting, such as Hello admin, would you like to see a status report?
+ - Otherwise, print a generic greeting, such as Hello Jaden, thank you for logging in again.
+```python
+"""
+Aliyah Alexis Millán
+CPSC-223P Section 1/Section 2
+9 September 2021
+"""
+usernames = ['admin', 'user1', 'user2', 'user3', 'user4']
+for name in usernames:
+    if name == 'admin':
+        print("Hello admin, would you like to see a status report?")
+    else:
+        print("Hello", name, ", thank you for logging in again!")
+```
+## 5_9.py:
+No Users: Add an if test to program from 5-8 to make sure the list of users is not empty.
+ - If the list is empty, print the message We need to find some users!
+ - Remove all of the usernames from your list, and make sure the correct message is printed.
+```python
+"""
+Aliyah Alexis Millán
+CPSC-223P Section 1/Section 2
+9 September 2021
+"""
+usernames = []
+
+if usernames:
+  for name in usernames:
+      if name == 'admin':
+        print("Hello admin, would you like to see a status report?")
+      else:
+        print("Hello ", name, ", thank you for logging in again!")
+else:
+  print("We need to find some users!")
+```
+## 5_10py:
+Checking Usernames: Do the following to create a program that simulates how websites ensure that everyone has a unique username.
+ - Make a list of five or more usernames called current_users.
+ - Make another list of five usernames called new_users. Make sure one or two of the new usernames are also in the current_users list.
+ - Loop through the new_users list to see if each new username has already been used. If it has, print a message that the person will need to enter a new username. If a username has not been used, print a message saying that the username is available.
+ - Make sure your comparison is case insensitive. If 'John' has been used, 'JOHN' should not be accepted. (To do this, you’ll need to make a copy of current_users containing the lowercase versions of all existing users.)
+```python
+"""
+Aliyah Alexis Millán
+CPSC-223P Section 1/Section 2
+9 September 2021
+"""
+
+current_users = ['user1', 'user2', 'admin', 'user3', 'user4']
+new_users = ['1user', '2user', '3user', '4user', '5user']
+
+current_users_lower = [user.lower() for user in current_users] #coded in one line
+
+for new_user in new_users:
+  if new_user.lower() in current_users_lower:
+     print("Sorry ", new_user, ", that name is taken.")
+  else:
+     print("Great, ", new_user, " is still available.")
+```
+## 5_11.py:
+Ordinal Numbers: Ordinal numbers indicate their position in a list, such as 1st or 2nd. Most ordinal numbers end in th, except 1, 2, and 3.
+ - Store the numbers 1 through 9 in a list.
+ - Loop through the list.
+ - Use an if-elif-else chain inside the loop to print the proper ordinal ending for each number. Your output should read "1st 2nd 3rd 4th 5th 6th 7th 8th 9th", and each result should be on a separate line.
+```python
+"""
+Aliyah Alexis Millán
+CPSC-223P Section 1/Section 2
+9 September 2021
+"""
+
+numbers = list(range(1,10))
+for num in numbers:
+  if num == 1:
+    print("1st")
+  elif num == 2:
+    print("2nd")
+  elif num == 3:
+    print("3rd")
+  else:
+    print(str(num) + "th")
+```
+## 5_12.py:
+List comprehension which is product of two iterables: initialize a list using a list comprehension which is the product of two iterables that describes students.  Students are either male or female, and a residents of Orange County, LA County or Riverside county.  Print the list.
+```python
+"""
+Aliyah Alexis Millán
+CPSC-223P Section 1/Section 2
+9 September 2021
+"""
+combined = []
+for gender in ['Male', 'Female']:
+  for county in ['Orange County', 'LA County', 'Riverside County']:
+    if gender != county:
+      combined.append((gender, county))
+print(combined)
+```
+# Chapter 6: Dictionaries
+## 6_1.py:
+Person: Use a dictionary to store information about a person you know. Store their first name, last name, age, and the city in which they live. You should have keys such as first_name, last_name, age, and city. Print each piece of information stored in your dictionary.
+```python
+
+```
+## 6_2.py:
+Favorite Numbers: Use a dictionary to store people’s favorite numbers. Think of five names, and use them as keys in your dictionary. Think of a favorite number for each person, and store each as a value in your dictionary. Print each person’s name and their favorite number. 
+```python
+
+```
+## 6_3.py:
+Glossary: A Python dictionary can be used to model an actual dictionary. However, to avoid confusion, let’s call it a glossary.
+ - Think of five programming words you’ve learned about in the previous chapters. Use these words as the keys in your glossary, and store their meanings as values.
+ - Print each word and its meaning as neatly formatted output. You might print the word followed by a colon and then its meaning, or print the word on one line and then print its meaning indented on a second line. Use the newline character (\n) to insert a blank line between each word-meaning pair in your output.  Use \ to include long definitions.  Use a key, value loop to print the glossary
+```python
+
+```
+## 6_5.py:
+Rivers: Make a dictionary containing three major rivers and the country each river runs through. One key-value pair might be 'nile': 'egypt'.
+ - Use a loop to print a sentence about each river, such as The Nile runs through Egypt.
+ - Use a loop to print the name of each river included in the dictionary.
+ - Use a loop to print the name of each country included in the dictionary.
+```python
+
+```
+## 6_6.py:
+Polling: Use the code in favorite_languages.py.
+
+Make a list of people who should take the favorite languages poll. Include some names that are already in the dictionary and some that are not.
+Loop through the list of people who should take the poll. If they have already taken the poll, print a message thanking them for responding. If they have not yet taken the poll, print a message inviting them to take the poll.
+```python
+
+```
+## 6_7.py:
+People: Start with the program you wrote for 6-1. Make two new dictionaries representing different people, and store all three dictionaries in a list called people. Loop through your list of people. As you loop through the list, print everything you know about each person.  For example, "Neil Thompson is 66 years old and lives in the city of Orange."
+```python
+
+```
+## 6_10.py:
+Favorite Numbers: Modify your program from 6-2 so each person can have more than one favorite number. For one person, give them three favorite number and for another give them two favorite numbers.  Then print each person’s name along with their favorite numbers.
+```python
+
+```
+## 6_11.py:
+ Cities: Make a dictionary called cities. Use the names of three cities as keys in your dictionary. Create a dictionary of information about each city and include the country that the city is in, its approximate population, and one fact about that city. The keys for each city’s dictionary should be something like country, population, and fact. Print the name of each city and all of the information you have stored about it.
+ ```python
+ 
+ ```
+ # Chapter 7: 
+
+
+
+
+
 
 
 
