@@ -1221,7 +1221,7 @@ print("\n----- Results -----\n")
 for name, place in responses.items():
     print(name.title() + " would like to visit " + place.title() + ".")
 ```
-## 7_11.py:
+# 7_11.py:
 Print Squares and Cubes of X:  Starting with the following code, complete the print statement using .format() such that it produces the attached output:
 ```python
 # Provided Code
@@ -1246,7 +1246,7 @@ Output:
  9  81  729
 10 100 1000
 ```
-📣 📣
+📣 CODE NEEDED 📣
 
 ```python
 CODE NEEDED
@@ -1295,7 +1295,7 @@ txt3 = "My name is {}, I'm {}".format("Jack", 27)
 numList = [round(123.45, 1), round(-5.12345, 3), round(0.056789, 5)]
 print(f"Number: {numList[0]}\n\nNumber: {numList[1]}\n\nNumber: {numList[2]}")
 ```
-## 7_14.py:
+# 7_14.py:
 **Table Printing:** Create a list of dictionaries of famous people containing first name, last name, date of birth, birthplace and notable quote.  Print the contents of the dictionary in a formatted table.  Adjust columns to look attractive for your table.  For example:
 ```
 Name                     Birthdate          Birthplace                Quote    
@@ -1313,6 +1313,148 @@ Masamune, Goro   May 26, 1926    Japan                       I made the Honjo Ma
 ```python
 CODE NEEDED
 ```
+# Chapter 8: Functions and Modules
+## 8_1.py:
+**Message:** Write a function called display_message() that prints one sentence telling everyone what you are learning about in this chapter. Call the function, and make sure the message displays correctly.
+```python
+"""
+Aliyah Alexis Millán
+CPSC-223P Section 1/Section 2
+5 October 2021
+"""
+
+def display_message():
+  message = "I'm learning to code using functions, I think."
+  print(message)
+
+display_message()
+```
+## 8_2.py:
+**Favorite Book:** Write a function called favorite_book() that accepts one parameter, title. The function should print a message, such as One of my favorite books is Alice in Wonderland. Call the function, making sure to include a book title as an argument in the function call.
+```python
+"""
+Aliyah Alexis Millán
+CPSC-223P Section 1/Section 2
+5 October 2021
+"""
+
+def favorite_book(book_title):
+  print(book_title + " is one of my favorite books.")
+
+favorite_book('The Sound and the Fury')
+```
+## 8_3.py:
+**T-Shirt:** Write a function called make_shirt() that accepts a size and the text of a message that should be printed on the shirt. The function should print a sentence summarizing the size of the shirt and the message printed on it. Call the function once using positional arguments to make a shirt. Call the function a second time using keyword arguments.
+```python
+"""
+Aliyah Alexis Millán
+CPSC-223P Section 1/Section 2
+7 October 2021
+"""
+
+def make_shirt(size, message):
+  print("\nI'm going to make a " + size + " t-shirt.")
+  print('It will say, "' + message + '"')
+
+make_shirt('small', 'sudo Will you be my Valentine?')
+make_shirt(message="I have your IP address. Be afraid.", size='medium')
+```
+## 8_4.py:
+**Large Shirts:** Modify the make_shirt() function so that shirts are large by default with a message that reads I love Python. Make a large shirt and a medium shirt with the default message, and a shirt of any size with a different message.
+```python
+"""
+Aliyah Alexis Millán
+CPSC-223P Section 1/Section 2
+7 October 2021
+Write a function called make_shirt() that accepts a size and the text of a message that should be printed on the shirt. The function should print a sentence summarizing the size of the shirt and the message printed on it. Call the function once using positional arguments to make a shirt. Call the function a second time using keyword arguments.
+"""
+
+def make_shirt(size='large', message="\nMy name is 'OR1=1;--\nPrepare to die.\n"):
+
+  print("\nI'm going to make a " + size + " t-shirt.")
+  print('It will say, "' + message + '"')
+
+make_shirt()
+make_shirt(size='medium')
+make_shirt('small', "Please stay @ 127.0.0.1. Don't be 255.255.255.255.")
+```
+## 8_6.py:
+**City Names:** Write a function called city_country() that takes in the name of a city and its country. The function should return a string formatted like this:
+"Santiago, Chile"
+
+Call your function with at least three city-country pairs, and print the values that are returned.
+```python
+"""
+Aliyah Alexis Millán
+CPSC-223P Section 1/Section 2
+7 October 2021
+"""
+
+def city_country(city, country):
+  return(city.title() + ", " + country.title())
+
+city = city_country('paris', 'france')
+print(city)
+
+city = city_country('chihuahua', 'mexico')
+print(city)
+
+city = city_country('moscow', 'russia')
+print(city)
+```
+## 8_7.py:
+**Album:** Write a function called make_album() that builds a dictionary describing a music album. The function should take in an artist name and an album title, and it should return a dictionary containing these two pieces of information. Use the function to make three dictionaries representing different albums. Print each return value to show that the dictionaries are storing the album information correctly.
+
+Use None to add an optional parameter to make_album() that allows you to store the number of songs on an album. If the calling line includes a value for the number of songs, add that value to the album’s dictionary. Make at least one new function call that includes the number of songs on an album.
+```python
+"""
+Aliyah Alexis Millán
+CPSC-223P Section 1/Section 2
+7 October 2021
+"""
+#Of course I take every opportunity to rep my man Alec
+#I made everything with proper capitalisation already out of respect for my man Alec.
+
+def make_album(artist, title, tracks=0):
+    album_dictionary = {
+        'Artist': artist.title(),
+        'Title': title.title(),
+        }
+    if tracks:
+        album_dictionary['Tracks'] = tracks
+    return album_dictionary
+
+album = make_album('Alec Benjamin', "Together We'll Fall")
+print(album)
+
+album = make_album('Alec Benjamin', 'Older', tracks=4)
+print(album)
+
+album = make_album('Alec Benjamin', 'Medicine Man', tracks=0)
+print(album)
+
+album = make_album('Alec Benjamin', 'Anesthesia', tracks=2)
+print(album)
+
+"""
+def make_album(artist, title):
+    album_dictionary = {
+        'Artist': artist.title(),
+        'Title': title.title(),
+        }
+    return album_dictionary
+
+album = make_album('Alec Benjamin', "Together We'll Fall") #dunno why the first L in ' we'll ' ends up capitalised.... very odd. When I delete the first L, it happens to the second L.
+print(album)
+
+album = make_album('Alec Benjamin', 'Older')
+print(album)
+
+album = make_album('Alec Benjamin', 'Medicine Man')
+print(album)
+"""
+```
+
 
 
 
