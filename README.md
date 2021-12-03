@@ -1252,38 +1252,27 @@ Output:
 CODE NEEDED
 ```
 ## 7_12.py:
-
-```python
-"""
-Aliyah Alexis Millán
-CPSC-223P Section 1/Section 2
-27 September 2021
-
-Printing Number: Create a list containing the following numbers: 123.45, -5.12345, 0.056789.  Print these numbers in this formatted output using an f-string.
-
+**Printing Number:** Create a list containing the following numbers: 123.45, -5.12345, 0.056789.  Print these numbers in this formatted output using an f-string.
+```
 Number: 123.45
 
 Number: -5.123
 
 Number: 0.05679
+```
+```python
+"""
+Aliyah Alexis Millán
+CPSC-223P Section 1/Section 2
+27 September 2021
 """
 
 numList = [round(123.45, 1), round(-5.12345, 3), round(0.056789, 5)]
 print(f"Number: {numList[0]}\n\nNumber: {numList[1]}\n\nNumber: {numList[2]}")
 ```
 ## 7_13.py:
-
-```python
-""""
-Aliyah Alexis Millán
-CPSC-223P Section 1/Section 2
-30 September 2021
-
-
-More Print Numbers: Using the list from 7-12, numbers in this formatted output using an str.format():
-
- 
-
+**More Print Numbers:** Using the list from 7-12, numbers in this formatted output using an str.format(): 
+```
 Formatted number list:
 
 _______123.45_______
@@ -1291,20 +1280,35 @@ _______123.45_______
 ______-5.12345______
 
 ______0.056789______
+```
+```python
+""""
+Aliyah Alexis Millán
+CPSC-223P Section 1/Section 2
+30 September 2021
 
-
-
-txt1 = "My name is {fname}, I'm {age}".format(fname = "John", age = 36)
-txt2 = "My name is {0}, I'm {1}".format("John",36)
-txt3 = "My name is {}, I'm {}".format("John",36)
+txt1 = "My name is {fname}, I'm {age}".format(fname = "Jack", age = 27)
+txt2 = "My name is {0}, I'm {1}".format("Jack", 27)
+txt3 = "My name is {}, I'm {}".format("Jack", 27)
 
 """
 numList = [round(123.45, 1), round(-5.12345, 3), round(0.056789, 5)]
 print(f"Number: {numList[0]}\n\nNumber: {numList[1]}\n\nNumber: {numList[2]}")
 ```
 ## 7_14.py:
+**Table Printing:** Create a list of dictionaries of famous people containing first name, last name, date of birth, birthplace and notable quote.  Print the contents of the dictionary in a formatted table.  Adjust columns to look attractive for your table.  For example:
+```
+Name                     Birthdate          Birthplace                Quote    
 
-📣 📣
+-------------------------------------------------------------------------------------
+
+Ellington, Duke       April 29, 1899  Washington D.C.      Gray skies are just clouds passing over.
+
+Davis, Miles            May 26, 1926    Alton, IL                   I always listen for what I can leave out.
+
+Masamune, Goro   May 26, 1926    Japan                       I made the Honjo Masamune.
+```
+📣 CODE NEEDED 📣
 
 ```python
 CODE NEEDED
