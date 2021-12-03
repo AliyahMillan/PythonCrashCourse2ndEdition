@@ -1454,8 +1454,504 @@ album = make_album('Alec Benjamin', 'Medicine Man')
 print(album)
 """
 ```
+## 8_9.py:
+**Messages:** Make a list containing a series of short text messages. Pass the list to a function called show_messages(), which prints each text message.
+```python
+"""
+Aliyah Alexis Millán
+CPSC-223P Section 1/Section 2
+7 October 2021
 
+Messages: Make a list containing a series of short text messages. Pass the list to a function called show_messages(), which prints each text message.
+"""
 
+def show_messages(messages):
+  for message in messages:
+    print(message)
 
+messages = ["hullo pangi", "how are u?", "u. me. mash bros 2nite", "\U0001F633"]
+show_messages(messages)
+```
+## 8_10.py:
+**Sending Messages:** Start with a copy of your program from 8-9. Write a function called send_messages() that prints each text message and moves each message to a new list called sent_messages as it’s printed. After calling the function, print both of your lists to make sure the messages were moved correctly.
+```python
+"""
+Aliyah Alexis Millán
+CPSC-223P Section 1/Section 2
+7 October 2021
+"""
 
+def show_messages(messages):
+  print("Showing all messages:")
+  for message in messages:
+    print(message)
 
+def send_messages(messages, sent_messages):
+  print("\nSending all messages:")
+  while messages:
+    current_message = messages.pop()
+    print(current_message)
+    sent_messages.append(current_message)
+
+messages = ["hullo pangi", "how are u?", "u. me. mash bros 2nite", "\U0001F633"]
+
+show_messages(messages)
+sent_messages = []
+send_messages(messages, sent_messages)
+
+print("\nFinal lists:")
+print(messages)
+print(sent_messages)
+```
+## 8_11.py:
+**Archived Messages:** Start with your work from 8-10. Call the function send_messages() with a copy of the list of messages. After calling the function, print both of your lists to show that the original list has retained its messages.
+```python
+"""
+Aliyah Alexis Millán
+CPSC-223P Section 1/Section 2
+7 October 2021
+"""
+def show_messages(messages):
+  print("Showing all messages:")
+  for message in messages:
+    print(message)
+
+def send_messages(messages, sent_messages):
+  print("\nSending all messages:")
+  while messages:
+    current_message = messages.pop()
+    print(current_message)
+    sent_messages.append(current_message)
+
+messages = ["hullo pangi", "how are u?", "u. me. mash bros 2nite", "\U0001F633"]
+show_messages(messages)
+
+sent_messages = []
+send_messages(messages[:], sent_messages)
+
+print("\nFinal lists:")
+print(messages)
+print(sent_messages)
+```
+## 8_12.py:
+**Sandwiches:** Write a function that accepts several items a person wants on a sandwich. The function should have one parameter that collects as many items as the function call provides, and it should print a summary of the sandwich that’s being ordered. Call the function three times, using a different number of arguments each time.
+```python
+"""
+Aliyah Alexis Millán
+CPSC-223P Section 1/Section 2
+7 October 2021
+"""
+
+def make_sandwich(*items):
+    print("\nI'll make you a Gio-style sandwich:")
+    for item in items:
+        print("---> Adding " + item + " to your sandwich.")
+    print("Your sandwich is ready to eat!")
+
+make_sandwich('ham', 'sharp cheddar cheese', 'lettuce', 'onions')
+make_sandwich('turkey', 'light mayo', 'tomatoes')
+make_sandwich('cheese', 'more cheese')
+```
+## 8_13.py:
+**User Profile:** Start with a copy of user_profile.py. Build a profile of yourself by calling build_profile(), using your first and last names and three other key-value pairs that describe you.
+```python
+"""
+Aliyah Alexis Millán
+CPSC-223P Section 1/Section 2
+7 October 2021
+User Profile: Start with a copy of user_profile.py. Build a profile of yourself by calling build_profile(), using your first and last names and three other key-value pairs that describe you.
+"""
+
+def build_profile(first, last, **user_info):
+    user_info['First_name'] = first
+    user_info['Last_name'] = last
+    return user_info
+    
+    
+user_profile = build_profile('Aliyah', 'Millán', Location='England',
+Field='Computer science')
+my_profile = build_profile('Harry', 'Potter', Location = 'Australia', Field = 'Magic')
+print(user_profile)
+print(my_profile)
+```
+## 8_14.py:
+**Cars:** Write a function that stores information about a car in a dictionary. The function should always receive a manufacturer and a model name. It should then accept an arbitrary number of keyword arguments. Call the function with the required information and two other name-value pairs, such as a color or an optional feature. Your function should work for a call like this one:
+```python
+car = make_car('subaru', 'outback', color='blue', tow_package=True)
+```
+Print the dictionary that’s returned to make sure all the information was stored correctly.
+```python
+"""
+Aliyah Alexis Millán
+CPSC-223P Section 1/Section 2
+7 October 2021
+"""
+
+def make_car(manuf, model, **options):
+    car_dictionary = {
+        'Manufacturer': manuf.title(),
+        'Model': model.title(),
+        }
+    for option, value in options.items():
+        car_dictionary[option] = value
+
+    return car_dictionary
+
+my_outback = make_car('subaru', 'outback', Colour='Blue', Tow_package=True)
+print(my_outback)
+
+my_tesla = make_car('tesla', 'S', Year=2021, Colour='Blue', Spoiler=True)
+print(my_tesla)
+```
+## 8_15.py:
+**Printing Models:** Put the functions for the example printing_models.py in a separate file called printing_functions.py. Write an import statement at the top of printing_models.py, and modify the file to use the imported functions.
+
+_printing.models.py_:
+```python
+"""
+Aliyah Alexis Millán
+CPSC-223P Section 1/Section 2
+7 October 2021
+**************************************
+This file is called printing_models.py
+**************************************
+"""
+
+import printing_functions as pf
+
+unprinted_designs = ['iphone case', 'robot pendant', 'dodecahedron']
+completed_models = []
+
+pf.print_models(unprinted_designs, completed_models)
+pf.show_completed_models(completed_models)
+```
+_printing_functions.py_:
+```python
+"""
+Aliyah Alexis Millán
+CPSC-223P Section 1/Section 2
+7 October 2021
+******************************************
+This file is called printing_functions.py
+******************************************
+"""
+
+def print_models(unprinted_designs, completed_models):
+  while unprinted_designs:
+    current_design = unprinted_designs.pop()
+    print("Printing model: " + current_design)
+    completed_models.append(current_design)
+        
+def show_completed_models(completed_models):
+  print("\nThe following models have been printed:")
+  for completed_model in completed_models:
+    print(completed_model)
+```
+# Chapter 9: Classes
+## 9_1.py:
+**Restaurant:** Make a class called Restaurant. 
+ - The __init__() method for Restaurant should store two attributes: 
+      - restaurant_name
+      - cuisine_type
+ - Make a method called describe_restaurant() that prints these two pieces of information, and a method called open_restaurant() that prints a message indicating that the restaurant is open.
+ - Make an instance called restaurant from your class. Print the two attributes individually, and then call both methods.
+```python
+"""
+Aliyah Alexis Millán
+CPSC-223P Section 1/Section 2
+11 October 2021
+"""
+
+class Restaurant():
+
+  def __init__(self, name, cuisine_type):
+    self.name = name.title()
+    self.cuisine_type = cuisine_type
+
+  def describe_restaurant(self):
+    message = self.name + " serves the best " + self.cuisine_type.title() + "! Her Majesty said so herself!"
+    print("\n" + message)
+
+  def open_restaurant(self):
+    message = self.name + " is open for business. Grab your waiter and start ordering some noodles and whathaveyou."
+    print("\n" + message)
+
+restaurant = Restaurant("Pangi Delicacies", 'italian cuisine')
+print(restaurant.name)
+print(restaurant.cuisine_type.title())
+
+restaurant.describe_restaurant()
+restaurant.open_restaurant()
+```
+## 9_2.py:
+**Three Restaurants:** Start with your class from 9-1. Create three different instances from the class, and call describe_restaurant() for each instance.
+```python
+"""
+Aliyah Alexis Millán
+CPSC-223P Section 1/Section 2
+11 October 2021
+"""
+
+class Restaurant():
+
+  def __init__(self, name, cuisine_type):
+    self.name = name.title()
+    self.cuisine_type = cuisine_type
+
+  def describe_restaurant(self):
+    message = self.name + " serves the best " + self.cuisine_type.title() + "! Her Majesty said so herself!"
+    print("\n" + message)
+
+  def open_restaurant(self):
+    message = self.name + " is open for business. Grab your waiter and start ordering some noodles and whathaveyou."
+    print("\n" + message)
+
+pd = Restaurant("pangi delicacies", 'italian cuisine')
+print(pd.name)
+print(pd.cuisine_type.title())
+
+pd.describe_restaurant()
+pd.open_restaurant()
+
+françaisfood = Restaurant("Français Food", 'french food')
+françaisfood.describe_restaurant()
+
+habit = Restaurant('habit burger', 'burgers')
+habit.describe_restaurant()
+```
+## 9_4.py:
+**Number Served:** Start with your program from 9-1. Add an attribute called number_served with a default value of 0. Create an instance called restaurant from this class. Print the number of customers the restaurant has served, and then change this value and print it again.
+ - Add a method called set_number_served() that lets you set the number of customers that have been served. Call this method with a new number and print the value again.
+ - Add a method called increment_number_served() that lets you increment the number of customers who’ve been served. Call this method with any number you like that could represent how many customers were served in, say, a day of business.
+```python
+"""
+Aliyah Alexis Millán
+CPSC-223P Section 1/Section 2
+11 October 2021
+"""
+class Restaurant():
+  def __init__(self, name, cuisine_type):
+    self.name = name.title()
+    self.cuisine_type = cuisine_type
+    self.number_served = 0
+  def describe_restaurant(self):
+    message = self.name + " serves the best " + self.cuisine_type.title() + "! Her Majesty said so herself!"
+    print("\n" + message)
+  def open_restaurant(self):
+    message = self.name + " is open for business!! Grab your waiter and start ordering some noodles and whathaveyou."
+    print("\n" + message)
+  def set_number_served(self, number_served):
+      self.number_served = number_served
+  def increment_number_served(self, additional_served):
+    self.number_served += additional_served
+
+restaurant = Restaurant("Pangi Delicacies", 'italian cuisine')
+restaurant.describe_restaurant()
+restaurant.open_restaurant()
+
+print("\nNumber served: " + str(restaurant.number_served))
+restaurant.number_served = 200
+
+print("Number served: " + str(restaurant.number_served))
+restaurant.set_number_served(690)
+
+print("Number served: " + str(restaurant.number_served))
+restaurant.increment_number_served(1000)
+
+print("Number served: " + str(restaurant.number_served))
+```
+## 9_6.py:
+**Ice Cream Stand:** An ice cream stand is a specific kind of restaurant. Write a class called IceCreamStand that inherits from the Restaurant class you wrote in 9-4. Add an attribute called flavours that stores a list of ice cream flavours. Write a method that displays these flavours. Create an instance of IceCreamStand, and call this method.
+```python
+"""
+Aliyah Alexis Millán
+CPSC-223P Section 1/Section 2
+13 October 2021
+"""
+class Restaurant():
+  def __init__(self, name, cuisine_type):
+    self.name = name.title()
+    self.cuisine_type = cuisine_type
+    self.number_served = 0
+  def describe_restaurant(self):
+    message = self.name + " serves the best " + self.cuisine_type.title() + "! Her Majesty said so herself!"
+    print("\n" + message)
+  def open_restaurant(self):
+    message = self.name + " is open for business!! Grab your waiter and start ordering some noodles and whathaveyou."
+    print("\n" + message)
+  def set_number_served(self, number_served):
+    self.number_served = number_served
+  def increment_number_served(self, additional_served):
+    self.number_served += additional_served
+
+class IceCreamStand(Restaurant):
+  def __init__(self, name, cuisine_type='ice_cream'):
+    super().__init__(name, cuisine_type)
+    self.flavours = []
+
+  def show_flavours(self):
+    print("\nWe have the following flavours:")
+    for flavor in self.flavours:
+      print("- " + flavor.title())
+
+WeIcedYourCreme = IceCreamStand('We Iced your Creme')
+WeIcedYourCreme.flavours = ['cookie dough', 'mint chocolate chip', 'fudge', 'coconut',  'mini milk']
+
+WeIcedYourCreme.describe_restaurant()
+WeIcedYourCreme.show_flavours()
+```
+# 9_10.py:
+**Imported Restaurant:** Using your latest Restaurant class, store it in a module. Make a separate file that imports Restaurant. Make a Restaurant instance, and call one of Restaurant’s methods to show that the import statement is working properly.
+📣 CODE NEEDED 📣
+```python
+
+```
+## 9_13.py:
+**Dice:** Make a class Die with one attribute called sides, which has a default value of 6. Write a method called roll_die() that prints a random number between 1 and the number of sides the die has. Make a 6-sided die and roll it 10 times.
+Make a 10-sided die and a 20-sided die. Roll each die 10 times.
+```python
+"""
+Aliyah Alexis Millán
+CPSC-223P Section 1/Section 2
+13 October 2021
+
+Dice: Make a class Die with one attribute called sides, which has a default value of 6. Write a method called roll_die() that prints a random number between 1 and the number of sides the die has. Make a 6-sided die and roll it 10 times.
+
+Make a 10-sided die and a 20-sided die. Roll each die 10 times.
+"""
+from random import randint #Random integer
+
+class Die():
+    def __init__(self, sides=6):
+        self.sides = sides
+    def roll_die(self):
+        return randint(1, self.sides)
+
+d6 = Die() #Made a 6 sided die
+results = []
+for roll_num in range(10):
+    result = d6.roll_die()
+    results.append(result)
+print("These are the 10 rolls of my 6-sided die:")
+print(results)
+
+d10 = Die(sides=10) #Made a 10-sided die
+results = []
+for roll_num in range(10):
+    result = d10.roll_die()
+    results.append(result)
+print("\nThese are the 10 rolls of my 10-sided die:")
+print(results)
+
+d20 = Die(sides=20) #Made a 20 sided die
+results = []
+for roll_num in range(10):
+    result = d20.roll_die()
+    results.append(result)
+print("\nThese are the 10 rolls of my 20-sided die:")
+print(results)
+```
+## 8_14.py:
+**Lottery:** Using the list called series, write a function called get_winning_ticket_number that randomly select four numbers and four letters from the list.  Create a list called winning_ticket_list which contains 10 winning ticket numbers. Print this list.
+
+Provided code:
+```
+series = ["0","1","2","3","4","5","6","7","8","9","A","B","C","D"]
+```
+```python
+"""
+Aliyah Alexis Millán
+CPSC-223P Section 1/Section 2
+13 October 2021
+
+Lottery: Using the list called series, write a 
+function:
+  get_get_winning_ticket_number that randomly select[s] 4 numbers and 4 letters from the list.  
+Create a 
+list called 
+  get_winning_ticket_number_list which contains 10 winning ticket numbers. Print this list.
+series = ["0","1","2","3","4","5","6","7","8","9","A","B","C","D"]
+------------------------------------------------------------------
+"""
+
+from random import choice
+series = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'A', 'B', 'C', 'D']
+num = []
+print("Let's see what the winning ticket is...")
+get_winning_ticket_number_list = []
+while len(get_winning_ticket_number_list) < 10:
+  while len(get_winning_ticket_number_list) < 10:
+      pulled_item = choice(series)
+      if pulled_item not in get_winning_ticket_number_list:
+          print(f"  We pulled a {pulled_item}!")
+          get_winning_ticket_number_list.append(pulled_item)
+          num.append(get_winning_ticket_number_list)
+          
+print("\nWinning ticket list: ", num)
+
+#This honestly looks terrible; need to figure out how to make this code look and work better.
+```
+## 9_15.py:
+**Lottery Analysis:** You can use a loop to see how hard it might be to win the kind of lottery you just modeled. Starting with your program in 9-14, write a loop that keeps pulling numbers until your ticket wins. Print a message reporting how many times the loop had to run to give you a winning ticket.  Also print the winning ticket number so you can confirm it is on the winning ticket list.  You may want to reduce the number of digits in your winning ticket for test purposes.
+Your output may look something like this:
+```
+winning ticket list: ['2114AZAD', '8621ZDDA', '53310AABA', '11032DABD', '21071ADAZ', '6184AZZB', '10469DZDZ', '7436ZDBD', '10657DDDZ', '4944DDDA']
+number_of_tries to win: 315416
+possible winner:  7436ZDBD
+```
+```python
+"""
+Aliyah Alexis Millán
+CPSC-223P Section 1/Section 2
+13 October 2021
+"""
+
+from random import choice
+series = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'A', 'B', 'C', 'D']
+num = []
+print("Let's see what the winning ticket is...")
+get_winning_ticket_number_list = []
+while len(get_winning_ticket_number_list) < 10:
+  while len(get_winning_ticket_number_list) < 10:
+    pulled_item = choice(series)
+    if pulled_item not in get_winning_ticket_number_list:
+      print(f"  We pulled a {pulled_item}!")
+      get_winning_ticket_number_list.append(pulled_item)
+      num.append(get_winning_ticket_number_list)
+          
+print("\nWinning ticket list: ", num)
+def check_ticket(played_ticket, winning_ticket_number_list):
+    for element in played_ticket:
+      if element not in winning_ticket_number_list:
+        return False
+    return True
+def make_random_ticket(chosen):
+  ticket = []
+  while len(ticket) < 4:
+    pulled_item = choice(chosen)
+    if pulled_item not in ticket:
+      ticket.append(pulled_item)
+  return ticket
+chosen = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'A', 'B', 'C', 'D']
+get_winning_ticket_number = get_winning_ticket_number_list(chosen)
+plays = 0
+won = False
+max_tries = 1000000
+while not won:
+  new_ticket = make_random_ticket(chosen)
+  won = check_ticket(new_ticket, get_winning_ticket_number)
+  plays += 1
+  if plays >= max_tries:
+      break
+if won:
+  print("There's a winning ticket!")
+  print(f"Your ticket reads: {new_ticket}")
+  print(f"The winning ticket reads: {get_winning_ticket_number}")
+  print(f"{plays} times' the charm!")
+else:
+  print(f"Tried {plays} times, without pulling a winner. How sad.")
+  print(f"Your ticket reads: {new_ticket}")
+  print(f"The winning ticket reads: {get_winning_ticket_number_list}")
+
+#This could also use improvements, coding-wise
+```
