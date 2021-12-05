@@ -146,6 +146,7 @@ _Click this link to access HeyDiddleDiddleTXT.txt:_
  ```
  # 10_11.py:
 **Common Words II:** Starting with your program from 10-10, modify it such that it can take a word from the user and search the book for the number of occurrences of that word.
+📣 CODE NEEDED 📣
 ```python
 
 ```
@@ -169,6 +170,7 @@ for i in range(0,3):
 # After exception handling, execution continues
 print("execution continues")
  ```
+ 📣 CODE NEEDED 📣
  ```python
  
  ```
