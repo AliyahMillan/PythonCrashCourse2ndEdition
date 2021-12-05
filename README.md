@@ -2098,17 +2098,19 @@ filename = 'HeyDiddleDiddleTXT.txt'
 count_common_words(filename, 'the')
  ```
 _Click this link to access HeyDiddleDiddleTXT.txt:_
- ```
+ 
  https://github.com/AliyahMillan/PythonCrashCourse2ndEdition/blob/962fd45eb07d1ef652b3920d257ba7f06b839d79/Chapter%2010/HeyDiddleDiddleTXT.txt
- ```
+ 
   # 10_11.py:
 **Common Words II:** Starting with your program from 10-10, modify it such that it can take a word from the user and search the book for the number of occurrences of that word.
+
 📣  CODE NEEDED 📣
 ```python
 
 ```
- # 10_12.py:
+ ## 10_12.py:
  **Multiple Exceptions:**  Add to the following code such that no unhandled exceptions occur.  Look through https://docs.python.org/3/tutorial/errors.html (Links to an external site.) for example code if you are not sure how to do this.
+ 
 _Provided code:_
  ```python
  x=[1,2,3,4]
@@ -2127,10 +2129,32 @@ for i in range(0,3):
 # After exception handling, execution continues
 print("execution continues")
  ```
- 📣  CODE NEEDED 📣
  ```python
+"""
+Aliyah Alexis Millán
+CPSC-223P Section 1/Section 2
+24 October 2021
+"""
 
- ```
+x = [1, 2, 3, 4]
+for i in range(0, 3):
+  try:
+    if i == 0: print(y)
+    elif i == 1: 5 / 0
+    else: x[4]
+
+  # Multiple except blocks to handle Exceptions
+  except NameError:
+    print("Variable not defined")
+
+  # Add handlers for other exceptions
+  except ZeroDivisionError:
+    print("Can't divide by zero!")
+  except  IndexError:
+    print("Index is out of range!")
+  # After exception handling, execution continues
+  print("Execution continues.....")
+```
  
  
  
