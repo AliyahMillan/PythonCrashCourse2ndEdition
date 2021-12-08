@@ -11,7 +11,7 @@ The solutions will be, of course, in Python.
 
 
 
-# Chapter 2: Variables and Simple Data Types
+# 📖 Chapter 2: Variables and Simple Data Types
 ## 2_1.py:
 Simple Message: Assign a message to a variable, and then print that message.
 ```python
@@ -192,7 +192,7 @@ print ("The area of a circle with radius",r,"is",area)
 circ = round(2*pi*r)
 print("The circumference of a circle with radius",r,"is", circ)
 ```
-# Chapter 3: Lists
+# 📖 Chapter 3: Lists
 ## 3_1.py: 
 Names: Store the names of a few of your friends in a list called names. Print each person’s name by accessing each element in the list, one at a time.
 ```python
@@ -461,7 +461,7 @@ print(phrase[1:5])
 print(phrase[0:13])
 print(phrase[0:8] + word)
 ```
-# Chapter 4: More Lists
+# 📖 Chapter 4: More Lists
 ## 4_1.py:
 Pizzas: Think of at least three kinds of your favorite pizza. Store these pizza names in a list, and then use a for loop to print the name of each pizza.
 
@@ -720,7 +720,7 @@ for current_prime in primes:
 print(primes)
 print("Length: ", len(primes))
 ```
-# Chapter 5: If
+# 📖 Chapter 5: If
 ## 5_8.py:
 Hello Admin: Make a list of five or more usernames, including the name 'admin'. Imagine you are writing code that will print a greeting to each user after they log in to a website. Loop through the list, and print a greeting to each user:
  - If the username is 'admin', print a special greeting, such as Hello admin, would you like to see a status report?
@@ -821,7 +821,7 @@ for gender in ['Male', 'Female']:
       combined.append((gender, county))
 print(combined)
 ```
-# Chapter 6: Dictionaries
+# 📖 Chapter 6: Dictionaries
 ## 6_1.py:
 Person: Use a dictionary to store information about a person you know. Store their first name, last name, age, and the city in which they live. You should have keys such as first_name, last_name, age, and city. Print each piece of information stored in your dictionary.
 ```python
@@ -1065,7 +1065,7 @@ for city, city_info in cities.items():
     print("  It has a population of about " + str(population) + ".")
     print(" One fact about it: " + str(fact))
  ```
- # Chapter 7: User Input and While Loops
+ # 📖 Chapter 7: User Input and While Loops
 ## 7_1.py:
 Rental Car: Write a program that asks the user what kind of rental car they would like. Print a message about that car, such as “Let me see if I can find you a Subaru.”
 ```python
@@ -1313,7 +1313,7 @@ Masamune, Goro   May 26, 1926    Japan                       I made the Honjo Ma
 ```python
 CODE NEEDED
 ```
-# Chapter 8: Functions and Modules
+# 📖 Chapter 8: Functions and Modules
 ## 8_1.py:
 **Message:** Write a function called display_message() that prints one sentence telling everyone what you are learning about in this chapter. Call the function, and make sure the message displays correctly.
 ```python
@@ -1647,7 +1647,7 @@ def show_completed_models(completed_models):
   for completed_model in completed_models:
     print(completed_model)
 ```
-# Chapter 9: Classes
+# 📖 Chapter 9: Classes
 ## 9_1.py:
 **Restaurant:** Make a class called Restaurant. 
  - The __init__() method for Restaurant should store two attributes: 
@@ -1955,7 +1955,7 @@ else:
 
 #This could also use improvements, coding-wise
 ```
-# Chapter 10: Exceptions
+# 📖 Chapter 10: Exceptions
 ## 10_6.py:
 **Addition:** One common problem when prompting for numerical input occurs when people provide text instead of numbers. 
 When you try to convert the input to an int, you’ll get a ValueError. Write a program that prompts for two numbers. 
@@ -2155,10 +2155,160 @@ for i in range(0, 3):
   # After exception handling, execution continues
   print("Execution continues.....")
 ```
+ # 📖 Chapter 11: Testing your Code
+ ## 11_1.py:
+**City, Country:** Write a function that accepts two parameters: a city name and a country name. The function should return a single string of the form City, Country, such as Santiago, Chile. Store the function in a module called city_functions.py.
+
+Create a file called test_cities.py that tests the function you just wrote (remember that you need to import unittest and the function you want to test). Write a method called test_city_country() to verify that calling your function with values such as 'santiago' and 'chile' results in the correct string. Run test_cities.py, and make sure test_city_country() passes.
+
+_city_functions.py:_
+```python
+"""
+Aliyah Alexis Millán
+CPSC-223P Section 1/Section 2
+28 October 2021
+
+ Turn in only the final versions of city_functions.py and test_cities.py.
+
+ ##This uses code from 8_6.py: ############################
+def city_country(city, country):
+  return(city.title() + ", " + country.title())
+
+city = city_country('paris', 'france')
+print(city)
+
+city = city_country('chihuahua', 'mexico')
+print(city)
+
+city = city_country('moscow', 'russia')
+print(city)
+######################################################
+
+This is city_functions.py
+"""
+
+def city_country(city, country):
+  return(city.title() + ", " + country.title())
+```
+_test_cities.py_:
+```python 
+"""
+Aliyah Alexis Millán
+CPSC-223P Section 1/Section 2
+28 October 2021
+
+Turn in only the final versions of city_functions.py and test_cities.py.
+
+This is test_cities.py
+
+8_6.py:
+####################################
+def city_country(city, country):
+  return(city.title() + ", " + country.title())
+
+city = city_country('paris', 'france')
+print(city)
+
+city = city_country('chihuahua', 'mexico')
+print(city)
+
+city = city_country('moscow', 'russia')
+print(city)
+
+"""
+import unittest
+from main import city_country
+#from city_functions import city_country
+
+class CitiesTestCase(unittest.TestCase):
+  def test_city_country(self):
+    chi_mx = city_country('chihuahua', 'mexico')
+    self.assertEqual(chi_mx, 'Chihuahua, Mexico')
+unittest.main()
+```
+ ## 11_2.py:
+ 11-2. Population: Modify your function so it requires a third parameter, population. 
+It should now return a single string of the form City, Country – population xxx, such as Santiago, Chile – population 5000000. 
+Run test_cities.py again. Make sure test_city_country() fails this time.
+
+Modify the function so the population parameter is optional. Run test_cities.py again, and make sure test_city_country() passes again.
+
+Write a second test called test_city_country_population() that verifies you can call your function with the values 'santiago', 'chile', and population=5000000. 
+Run test_cities.py again, and make sure this new test passes.
+
+_cities.py:_
+ ```python
+ """
+Aliyah Alexis Millán
+CPSC-223P Section 1/Section 2
+28 October 2021
+
+Turn in only the final versions of city_functions.py and test_cities.py.
+
+This is cities.py
+"""
+def city_country(city, country, population=0):
+  output_string = city.title() + ", " + country.title()
+  if population:
+    output_string += ' - population ' + str(population)
+  return output_string
+ ```
+ _test_cities.py:_
+ ```python
+ """
+Aliyah Alexis Millán
+CPSC-223P Section 1/Section 2
+28 October 2021
+
+Turn in only the final versions of city_functions.py and test_cities.py.
+
+
+This is test_cities.py
+"""
+import unittest
+
+#from city_functions import city_country
+from main import city_country
+class CitiesTestCase(unittest.TestCase):
+  def test_city_country(self):
+    chi_mx = city_country('chihuahua', 'mexico')
+    self.assertEqual(chi_mx, 'Chihuahua, Mexico')
+
+    def test_city_country_population(self):
+      chi_mx = city_country('chihuahua', 'mexico', population=878000)
+      self.assertEqual(chi_mx, 'Chihuahua, Mexico - population 878000')
+unittest.main()
+ ```
+ ##  11_3.py:
+11-3. Employee: Write a class called Employee. The __init__() method should take in a first name, a last name, and an annual salary, and store each of these as attributes. 
+Write a method called give_raise() that adds $5,000 to the annual salary by default but also accepts a different raise amount.
+
+Write a test case for Employee called test_employee.py. Write two test methods, test_give_default_raise() and test_give_custom_raise(). 
+Use the setUp() method so you don’t have to create a new employee instance in each test method. Run your test case, and make sure both tests pass.
+ ```python
+ """
+Aliyah Alexis Millán
+CPSC-223P Section 1/Section 2
+28 October 2021
+
+For problem 11-3, turn in only employee.py and test_employee.py.
+
+This is employee.py
+"""
+class Employee():
+  def __init__(self, f_name, l_name, salary):
+    self.first = f_name.title()
+    self.last = l_name.title()
+    self.salary = salary
+
+  def give_raise(self, amount=5000):
+    self.salary += amount
+ ```
  
- 
- 
- 
- 
- 
- 
+
+
+
+
+
+
+
